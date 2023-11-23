@@ -13,6 +13,7 @@ export type UserViewType = Omit<WithId<UserType>, 'passwordHash'>;
 export const userService = {
   async createUser(name: string, login: string, password: string): Promise<UserViewType> {
     //TODO: create correct hash
+    //const salt =
     const passwordHash = password;
 
     const createdId = await userRepository.createUser(name, login, passwordHash);
